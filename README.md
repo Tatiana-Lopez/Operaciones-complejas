@@ -5,7 +5,8 @@ Cuaderno de Jupyter con la implementación y verificación de 18 operaciones de
 y la librería `numpy`.
 
 **Autor:** Leidy Tatiana Lopez
-//n
+
+
 **Institución:** Escuela Colombiana de Ingeniería Julio Garavito
 
 ## Contenido
