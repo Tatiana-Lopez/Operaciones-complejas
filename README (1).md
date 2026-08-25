@@ -7,12 +7,7 @@ lineal sobre el cuerpo de los números complejos, usando el tipo nativo
 Cada operación se implementa **dos veces**: una versión propia construida
 directamente desde la definición matemática (con bucles explícitos, para hacer
 visible el procedimiento) y la llamada equivalente de NumPy. Las dos se
-comparan en cada celda, y al final una batería de pruebas automáticas verifica
-las 18 de una sola pasada.
-
-**Autor:** _(tu nombre)_
-**Curso:** _(nombre del curso)_
-**Institución:** Escuela Colombiana de Ingeniería Julio Garavito
+comparan en cada celda, y al final las pruebas automáticas.
 
 ---
 
@@ -20,8 +15,8 @@ las 18 de una sola pasada.
 
 ```
 .
-├── operaciones_complejas.ipynb   Cuaderno principal: teoría, implementación y pruebas
-└── README.md                     Este archivo
+-operaciones-complejos.ipynb   Cuaderno principal:  implementación y pruebas
+-README.md                     
 ```
 
 ---
@@ -92,8 +87,6 @@ A = np.array([[1 + 1j, 2 - 1j],
 
 ### Convenciones del proyecto
 
-Cuatro decisiones de diseño que atraviesan todo el cuaderno:
-
 1. **`dtype=complex` siempre.** Si se omite, NumPy infiere el tipo de los datos
    y descarta la parte imaginaria en silencio. Todas las funciones convierten
    su entrada con `np.array(x, dtype=complex)` antes de operar.
@@ -152,7 +145,7 @@ norma(u)                         # 3.872983346207417
 distancia(u, v)                  # 6.6332495807108
 ```
 
-Nótese la diferencia entre el producto interno y el producto punto sin
+Se puede notar la diferencia entre el producto interno y el producto punto sin
 conjugar, un error frecuente:
 
 ```python
@@ -173,15 +166,6 @@ adjunta(A)
 accion(A, u)                     # [4.-2.j  6.-1.j]
 ```
 
-**Verificación de propiedades espectrales**
-
-```python
-Herm = np.array([[3 + 0j, 2 - 1j],
-                 [2 + 1j, 5 + 0j]], dtype=complex)
-
-es_hermitiana(Herm)              # True
-np.linalg.eigvals(Herm)          # [1.5505+0.j  6.4495+0.j]  valores reales
-```
 
 **Matrices unitarias y producto tensor**
 
@@ -197,28 +181,7 @@ ket1 = np.array([0, 1], dtype=complex)
 producto_tensor(ket0, ket1)      # [0.+0.j  1.+0.j  0.+0.j  0.+0.j]
 ```
 
----
-
-## Requisitos
-
-- Python 3.8 o superior
-- `numpy`
-- `jupyter`
-
-```bash
-pip install numpy jupyter
 ```
-
----
-
-## Ejecución
-
-```bash
-jupyter notebook operaciones_complejas.ipynb
-```
-
-Se recomienda ejecutar **Kernel → Restart & Run All** para correr el cuaderno
-completo en orden desde un estado limpio.
 
 ## Ejecución de las pruebas
 
@@ -247,16 +210,4 @@ Todas las pruebas pasaron correctamente.
 
 Si alguna verificación falla, la línea correspondiente se marca con `FALLA` y
 al terminar el recorrido se lanza un `AssertionError` con la lista de pruebas
-fallidas, de modo que un fallo no impide ver el resto del diagnóstico.
-
----
-
-## Notas sobre errores frecuentes
-
-| Error | Consecuencia |
-|-------|--------------|
-| Omitir `dtype=complex` | NumPy descarta la parte imaginaria sin avisar |
-| Usar `*` entre matrices | Multiplica entrada a entrada; el producto matricial es `@` |
-| Usar `np.dot` como producto interno | No conjuga el primer argumento |
-| Comparar con `==` | Falla por error de punto flotante |
-| Esperar que `.T` transponga un vector 1-D | No tiene efecto |
+fallidas.
