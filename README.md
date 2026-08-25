@@ -4,8 +4,7 @@ Cuaderno de Jupyter con la implementación y verificación de 18 operaciones de
 álgebra lineal sobre los números complejos, usando el tipo `complex` de Python
 y la librería `numpy`.
 
-**Autor:** _(tu nombre)_
-**Curso:** _(nombre del curso)_
+**Autor:** Leidy Tatiana Lopez
 **Institución:** Escuela Colombiana de Ingeniería Julio Garavito
 
 ## Contenido
