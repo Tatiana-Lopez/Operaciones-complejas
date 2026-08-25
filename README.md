@@ -5,6 +5,7 @@ Cuaderno de Jupyter con la implementación y verificación de 18 operaciones de
 y la librería `numpy`.
 
 **Autor:** Leidy Tatiana Lopez
+//n
 **Institución:** Escuela Colombiana de Ingeniería Julio Garavito
 
 ## Contenido
@@ -34,17 +35,5 @@ El cuaderno `operaciones_complejas.ipynb` cubre:
 
 Cada operación incluye su definición matemática, una implementación propia
 basada en la definición y la verificación contra la función equivalente de
-NumPy. Al final hay una batería de pruebas automáticas.
+NumPy, ademas se agregan las pruebas.
 
-## Requisitos
-
-- Python 3.8 o superior
-- numpy
-- jupyter
-
-## Ejecución
-
-```bash
-pip install numpy jupyter
-jupyter notebook operaciones_complejas.ipynb
-```
